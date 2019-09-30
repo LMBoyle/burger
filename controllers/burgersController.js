@@ -6,6 +6,9 @@ var connection = require("../models/burger.js");
 
 // Routes ===================================================================
 
+router.get("/", function(req, res) {
+  res.render("index")
+})
 
 // Export ===================================================================
 
