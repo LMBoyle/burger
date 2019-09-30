@@ -2,14 +2,24 @@ h1 {
   text-align: center;
 }
 
-#menu {
-  background-color: red;
+body {
+  background-color: #f8f7e3;
 }
 
-#plate {
-  background-color: blue;
-}
-
+#menu,
+#plate,
 #stomach {
-  background-color: green;
+  background-color: transparent;
+}
+
+
+#plate img,
+#stomach img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
