@@ -6,13 +6,14 @@ body {
   background-color: #f8f7e3;
 }
 
+/* Sections */
 #menu,
 #plate,
 #stomach {
   background-color: transparent;
 }
 
-
+/* Images */
 #plate img,
 #stomach img {
   width: 100%;
@@ -22,4 +23,73 @@ body {
   left: 0;
   right: 0;
   margin: auto;
+}
+
+/* Menu */
+.menuContain {
+  position: relative;
+  text-align: center;
+}
+
+.menuText {
+  font-family: 'Homemade Apple', cursive;
+  color: whitesmoke;
+  position: absolute;
+  top: 0px;
+  left: 14px;
+  -webkit-columns: 2;
+  -moz-columns: 4;
+  columns: 2;
+  height: 100%;
+  width: 93%;
+  padding: 0 0.5em;
+  -webkit-column-fill: auto;
+  -moz-column-fill: auto;
+  column-fill: auto;
+}
+
+ul {
+  list-style: none;
+  padding-left: 5px;
+} 
+
+/* Plate */
+.plateContain {
+  position: relative;
+  text-align: center;
+}
+
+.burgers {
+  font-family: 'Homemade Apple', cursive;
+  color: whitesmoke;
+  position: absolute;
+  top: 70px;
+  left: 80px;
+  -webkit-columns: 4;
+  -moz-columns: 4;
+  columns: 4;
+  height: 55%;
+  width: 60%;
+  padding: 0 0.5em;
+  -webkit-column-fill: auto;
+  -moz-column-fill: auto;
+  column-fill: auto;
+}
+
+.burgerBtn {
+  background:url(../img/fullBurger.png) no-repeat;
+  background-size: 25px 25px;
+  width:25px;
+  height:25px;
+  line-height: 10px;
+  border:none;
+  padding: 8px 0;
+}
+
+.burgerBtn:hover {
+  background:url(../img/eatenBurger.png) no-repeat;
+  background-size: 25px 25px;
+  width:25px;
+  height:25px;
+  border:none;
 }
