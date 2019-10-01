@@ -2,12 +2,18 @@
 
 var express = require("express");
 var router = express.Router();
-var connection = require("../models/burger.js");
+var burger = require("../models/burger.js");
 
 // Routes ===================================================================
 
 router.get("/", function(req, res) {
-  res.render("index")
+  burger.selectAll(function(data) {
+    var objectAll = {
+      burgers: data
+    }
+    console.log(objectAll);
+    res.render("index", objectAll)
+  })
 })
 
 // Export ===================================================================

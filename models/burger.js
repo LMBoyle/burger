@@ -1,0 +1,17 @@
+// Dependencies =============================================================
+
+var orm = require("../config/orm.js");
+
+// ORM ======================================================================
+
+var burger = {
+  selectAll: function(cb) {
+    orm.selectAll("burgers", function(res) {
+      cb(res);
+    })
+  }
+}
+
+// Export ===================================================================
+
+module.exports = burger;

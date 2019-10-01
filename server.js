@@ -1,7 +1,7 @@
 // Dependencies =============================================================
 
 var express = require("express");
-var routes = require("./controllers/burgersController.js");
+var routes = require("../burger/controllers/burgersController.js");
 var exphbs = require("express-handlebars");
 
 // Express ==================================================================

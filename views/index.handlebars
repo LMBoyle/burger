@@ -7,7 +7,11 @@
 
       <div class="menuText">
         <ul>
-          <li> Burger </li>
+          {{#each burgers}}
+              <li>
+                {{this.burgerName}}
+              </li>
+          {{/each}}
         </ul>
       </div>
   {{!-- Close Menu --}}
