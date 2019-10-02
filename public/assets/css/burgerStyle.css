@@ -1,22 +1,32 @@
 h1 {
   text-align: center;
+  font-family: 'Fugaz One', cursive;
 }
 
-body {
+html, body {
   background-color: #f8f7e3;
+  margin: 0;
+  height: 100%;
 }
 
-/* Sections */
+
+/*! ============ Sections ============ */
 #menu,
 #plate,
 #stomach {
   background-color: transparent;
 }
 
-/* Images */
+/*! ============= Images ============= */
+#menu img {
+  width: 80%;
+  height: 100%;
+}
+
 #plate img,
 #stomach img {
   width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -25,23 +35,42 @@ body {
   margin: auto;
 }
 
-/* Menu */
+/*! ======= Bootstrap Carousel ======= */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  color: black
+}
+
+.carousel-icons span.active {
+  color: blue;
+}
+
+.carousel-icons span{
+  color: red;
+  display: block;
+  width: 80px;
+  height: 40px;
+  margin: 0;
+  border: none;
+}
+
+/*! ============== Menu ============== */
 .menuContain {
   position: relative;
   text-align: center;
 }
 
 .menuText {
-  font-family: 'Homemade Apple', cursive;
+  font-family: 'Fredericka the Great', cursive;
   color: whitesmoke;
   position: absolute;
-  top: 0px;
-  left: 14px;
+  top: 30px;
+  left: 111px;
   -webkit-columns: 2;
-  -moz-columns: 4;
+  -moz-columns: 2;
   columns: 2;
-  height: 100%;
-  width: 93%;
+  height: 85%;
+  width: 80%;
   padding: 0 0.5em;
   -webkit-column-fill: auto;
   -moz-column-fill: auto;
@@ -55,14 +84,20 @@ ul {
 
 li {
   padding-top: 10px;
-  font-size: 13px
+  font-size: 25px;
 }
 
 li:hover {
-  border: 1px solid whitesmoke;
+  color: #ea5370;
 }
 
-/* Plate */
+#burgerForm {
+  font-family: 'Architects Daughter', cursive;
+  padding-top: 10px;
+  margin: 15px 0 55px;
+}
+
+/*! ============= Plate  ============= */
 .plateContain {
   position: relative;
   text-align: center;

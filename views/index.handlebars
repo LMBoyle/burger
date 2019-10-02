@@ -1,45 +1,91 @@
 <div class="container">
   <h1> Eat Da Burger! </h1>
-  <div class="row">
-    {{!-- Menu --}}
-    <div class="col-md-4 menuContain" id="menu">
-      <img src="/assets/img/chalkboard.jpg" alt="chalkboard"/>
 
-      <div class="menuText">
-        <ul>
-          {{#each burgers}}
-              <li>
-                {{this.burgerName}}
-              </li>
-          {{/each}}
-        </ul>
+  {{!-- Carousel --}}
+  {{!-- Bottom Indicators --}}
+  <div id="carouselIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div class="carousel-indicators carousel-icons">
+      <span data-target="#carouselIndicators" data-slide-to="0" class="active">
+        <i class="fas fa-hamburger"></i>
+      </span>
+      <span data-target="#carouselIndicators" data-slide-to="1">
+        <i class="fas fa-hamburger"></i>
+      </span>
+      <span data-target="#carouselIndicators" data-slide-to="2">
+        <i class="fas fa-hamburger"></i>
+      </span>
+    </div>
+
+    {{!-- Carousel Cards --}}
+    <div class="carousel-inner">
+
+      {{!-- Menu --}}
+      <div class="carousel-item menuContain active" id="menu">
+          <img src="/assets/img/chalkboard.jpg" alt="chalkboard"/>
+
+          <div class="menuText">
+            <ul>
+              {{#each burgers}}
+                  <li>
+                    {{this.burgerName}}
+                  </li>
+              {{/each}}
+            </ul>
+          </div>
+
+          <div class="text-center" id="burgerForm">
+            <form class="newBurger">
+              <div class="form-group">
+                <label for="ca"> Burger Name: </label>
+                <input type="text" id="bur" name="name" placeholder="If Looks Could Kale">
+              </div>
+
+              <button type="submit"> Request Burger </button>
+            </form>
+          {{!-- Close Form Div --}}
+          </div>
+
+        {{!-- Close Menu --}}
       </div>
-  {{!-- Close Menu --}}
-    </div>
 
-    {{!-- Plate --}}
-    <div class="col-md-4 plateContain" id="plate">
-      <img src="/assets/img/plate.png" alt="plate"/>
+      {{!-- Plate --}}
+      <div class="carousel-item">
+        <div class="plateContain" id="plate">
+        <img src="/assets/img/plate.png" alt="plate"/>
 
-      <div class="burgers">
-        <button class="burgerBtn"></button>
+        <div class="burgers">
+          <button class="burgerBtn"></button>
+        </div>
+    {{!-- Close Plate --}}
       </div>
-  {{!-- Close Plate --}}
+      </div>
+
+
+      <div class="carousel-item">
+            {{!-- Stomach --}}
+      <div id="stomach">
+        <img src="/assets/img/stomach.jpg" alt="stomach"/>
+      </div>
+      </div>
     </div>
 
-    {{!-- Stomach --}}
-    <div class="col-md-4" id="stomach">
-      <img src="/assets/img/stomach.jpg" alt="stomach"/>
-    </div>
-  {{!-- Close Row --}}
+    {{!-- Carousel Buttons --}}
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <i class="fas fa-utensils"><span class="carousel-control-prev-icon" aria-hidden="true"></span></i>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 
-  {{!-- Footer --}}
-  <footer class="footer">
-    <div class="container text-center">
-      <p><a href="/api/friends"> API Burger List </a> | <a href="https://github.com/LMBoyle/burger"> GitHub Repo </a> 
-    </div>
-  </footer>
-  
-{{!-- Close Container --}}
+  {{!-- Close Container --}}
 </div>
+
+{{!-- Footer --}}
+<footer class="footer card-footer">
+  <div class="container text-center">
+    <p><a href="/api/friends"> API Burger List </a> | <a href="https://github.com/LMBoyle/burger"> GitHub Repo </a> 
+  </div>
+</footer>

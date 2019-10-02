@@ -13,7 +13,11 @@ router.get("/", function(req, res) {
     }
     console.log(objectAll);
     res.render("index", objectAll)
-  })
+  });
+});
+
+router.post("/api/burgers", function(req, res) {
+  burger.create([])
 })
 
 // Export ===================================================================
