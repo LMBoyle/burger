@@ -18,20 +18,20 @@ html, body {
 }
 
 /*! ============= Images ============= */
-#menu img,
-#stomach img {
+#menu img {
   width: 80%;
   height: 100%;
 }
 
+#stomach img,
 #plate img {
   height: 80%;
 }
 
 /*! ======= Bootstrap Carousel ======= */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  color: black
+.carousel-control-prev i,
+.carousel-control-next i {
+  color: black;
 }
 
 .carousel-icons span.active {
@@ -138,6 +138,38 @@ li:hover {
 }
 
 .burgerBtn:hover {
+  background:url(../img/eatenBurger.png) no-repeat;
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
+  border:none;
+}
+
+/*! ============ Stomach  ============ */
+.stomachContain {
+  position: relative;
+  text-align: center;
+  height: 871.391px;
+}
+
+.eatenBurgers {
+  font-family: 'Homemade Apple', cursive;
+  color: whitesmoke;
+  position: absolute;
+  top: 108px;
+  left: 322px;
+  -webkit-columns: 4;
+  -moz-columns: 4;
+  columns: 4;
+  height: 66%;
+  width: 40%;
+  padding: 0 0.5em;
+  -webkit-column-fill: auto;
+  -moz-column-fill: auto;
+  column-fill: auto;
+}
+
+.eatenBurgerBtn {
   background:url(../img/eatenBurger.png) no-repeat;
   background-size: 40px 40px;
   width: 40px;
