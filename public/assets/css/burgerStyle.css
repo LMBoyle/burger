@@ -18,21 +18,14 @@ html, body {
 }
 
 /*! ============= Images ============= */
-#menu img {
+#menu img,
+#stomach img {
   width: 80%;
   height: 100%;
 }
 
-#plate img,
-#stomach img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+#plate img {
+  height: 80%;
 }
 
 /*! ======= Bootstrap Carousel ======= */
@@ -42,16 +35,24 @@ html, body {
 }
 
 .carousel-icons span.active {
-  color: blue;
+  color: brown;
+  opacity: 1;
 }
 
 .carousel-icons span{
-  color: red;
+  color: brown;
+  opacity: .5;
   display: block;
   width: 80px;
   height: 40px;
-  margin: 0;
+  margin: 0 auto;
   border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.carousel-icons span:hover {
+  opacity: 1;
 }
 
 /*! ============== Menu ============== */
@@ -69,7 +70,7 @@ html, body {
   -webkit-columns: 2;
   -moz-columns: 2;
   columns: 2;
-  height: 85%;
+  height: 72%;
   width: 80%;
   padding: 0 0.5em;
   -webkit-column-fill: auto;
@@ -89,6 +90,7 @@ li {
 
 li:hover {
   color: #ea5370;
+  cursor: pointer;
 }
 
 #burgerForm {
@@ -97,23 +99,28 @@ li:hover {
   margin: 15px 0 55px;
 }
 
+#bur {
+  padding-left: 10px;
+}
+
 /*! ============= Plate  ============= */
 .plateContain {
   position: relative;
   text-align: center;
+  height: 871.391px;
 }
 
 .burgers {
   font-family: 'Homemade Apple', cursive;
   color: whitesmoke;
   position: absolute;
-  top: 70px;
-  left: 80px;
+  top: 108px;
+  left: 322px;
   -webkit-columns: 4;
   -moz-columns: 4;
   columns: 4;
-  height: 55%;
-  width: 60%;
+  height: 66%;
+  width: 40%;
   padding: 0 0.5em;
   -webkit-column-fill: auto;
   -moz-column-fill: auto;
@@ -122,9 +129,9 @@ li:hover {
 
 .burgerBtn {
   background:url(../img/fullBurger.png) no-repeat;
-  background-size: 25px 25px;
-  width:25px;
-  height:25px;
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
   line-height: 10px;
   border:none;
   padding: 8px 0;
@@ -132,8 +139,8 @@ li:hover {
 
 .burgerBtn:hover {
   background:url(../img/eatenBurger.png) no-repeat;
-  background-size: 25px 25px;
-  width:25px;
-  height:25px;
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
   border:none;
 }
