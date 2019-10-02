@@ -1,4 +1,6 @@
 $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+
   $(".newBurger").on("submit", function(event) {
     event.preventDefault();
 
