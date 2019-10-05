@@ -16,8 +16,19 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get("/api/burgers", function(req, res) {
+  burger.selectAll(function(data) {
+    var objectAll = {
+      burgers: data
+    }
+    res.json(objectAll)
+  });
+});
+
 router.post("/api/burgers", function(req, res) {
-  burger.create([])
+  burger.insertOne(req.body.burgerName, function(result) {
+    res.json({id: result.insertId})
+  });
 })
 
 // Export ===================================================================

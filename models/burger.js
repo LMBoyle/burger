@@ -9,6 +9,11 @@ var burger = {
     orm.selectAll("burgers", function(res) {
       cb(res);
     })
+  },
+  insertOne: function(vals, cb) { 
+    orm.insertOne("burgers", vals, function(res) {
+      cb(res)
+    })
   }
 }
 
