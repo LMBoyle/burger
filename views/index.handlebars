@@ -16,12 +16,14 @@
       </span>
     </div>
 
+    {{!-- Divs for gifs --}}
     <div class="menuGif"></div>
     <div class="plateGif"></div>
+
     {{!-- Carousel Cards --}}
     <div class="carousel-inner">
       {{!-- Menu --}}
-      <div class="carousel-item menuContain active" id="menu" href="/menu">
+      <div class="carousel-item menuContain active" id="menu">
           <img src="/assets/img/chalkboard.jpg" alt="chalkboard"/>
 
           {{!-- List Burgers --}}
@@ -54,7 +56,7 @@
       </div>
 
       {{!-- Plate --}}
-      <div class="carousel-item plateContain" id="plate" href="/plate">
+      <div class="carousel-item plateContain" id="plate">
         <img src="/assets/img/plate.png" alt="plate"/>
 
         <div class="burgers">
@@ -73,7 +75,7 @@
       </div>
 
       {{!-- Stomach --}}
-      <div class="carousel-item stomachContain" id="stomach" href="/stomach">
+      <div class="carousel-item stomachContain" id="stomach">
         <img src="/assets/img/stomach.jpg" alt="stomach"/>
 
         <div class="eatenBurgers">
@@ -96,11 +98,11 @@
 
     {{!-- Carousel Buttons --}}
     <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-      <i class="fas fa-utensils fa-2x"></i>
+      <i class="fa-2x fas fa-hand-holding-usd" id="leftIcon"></i>
       <span class="sr-only">Previous</span>
     </a>
     <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-      <i class="fas fa-utensils fa-2x"></i>
+      <i class="fa-2x fas fa-utensils" id="rightIcon"></i>
       <span class="sr-only">Next</span>
     </a>
   </div>
