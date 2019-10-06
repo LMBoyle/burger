@@ -17,6 +17,7 @@ router.get("/", function(req, res) {
   });
 });
 
+
 // Get all the data and render it as a json object
 router.get("/api/burgers", function(req, res) {
   burger.selectAll(function(data) {

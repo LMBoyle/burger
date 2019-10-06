@@ -3,6 +3,7 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 
   // TODO Change carousel icons
+  // TODO Stay on page when reload
 
   // On submit, add a new burger
   $(".newBurger").on("submit", function(event) {
@@ -25,8 +26,18 @@ $(function () {
   });
 
   // On menu click
+  // TODO keep all items on menu and add to a different table for plate & stomach
+  // TODO prevent too many burgers on plate or stomach
   $(".burgerText").on("click", function(event) {
     var id = $(this).data("id");
+    var menuGifs = [
+      "https://media.giphy.com/media/l2SpNLZQSlENDKAkU/giphy.gif",
+      "https://media.giphy.com/media/3o7TKUGccxlaQqdgRO/giphy.gif",
+      "https://media.giphy.com/media/xTiTnuxMQhfXjhXQ4w/giphy.gif"
+    ]
+
+    var gifDiv = $(".menuGif")
+    var gifImg = $("<img>")
 
     var newState = {
       menu: false,
@@ -39,7 +50,12 @@ $(function () {
       data: newState
     }).then(function() {
       console.log("changed state: ", newState);
-      location.reload();
+      // Show gif 
+      gifDiv.empty();
+      gifImg.attr("src", menuGifs[Math.floor(Math.random() * 2)])
+      gifDiv.append(gifImg)
+      $(".menuGif").css("display", "block")
+      // location.reload();
     })
   })
 
@@ -59,7 +75,6 @@ $(function () {
     }).then(function() {
       console.log("changed state: ", newState);
       location.reload();
-
     })
   })
 })
