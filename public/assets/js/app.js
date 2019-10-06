@@ -1,6 +1,10 @@
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  // Function for showing/hiding tooltips
+  $('[data-toggle="tooltip"]').tooltip();
 
+  // TODO Change carousel icons
+
+  // On submit, add a new burger
   $(".newBurger").on("submit", function(event) {
     event.preventDefault();
 
@@ -18,5 +22,26 @@ $(function () {
         location.reload();
       }
     )
+  });
+
+  // TODO On menu click
+  $(".burgerText").on("click", function(event) {
+    var id = $(this).data("id");
+
+    var newState = {
+      menu: false,
+      served: true,
+      devoured: false
+    };
+
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: newState
+    }).then(function() {
+      console.log("changed state: ", newState);
+      location.reload();
+    })
   })
+
+  // TODO On plate click
 })

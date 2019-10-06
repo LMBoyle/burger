@@ -6,6 +6,7 @@ var burger = require("../models/burger.js");
 
 // Routes ===================================================================
 
+// Get all the data and render it on the page
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var objectAll = {
@@ -16,6 +17,7 @@ router.get("/", function(req, res) {
   });
 });
 
+// Get all the data and render it as a json object
 router.get("/api/burgers", function(req, res) {
   burger.selectAll(function(data) {
     var objectAll = {
@@ -25,10 +27,30 @@ router.get("/api/burgers", function(req, res) {
   });
 });
 
+// Post the new burger to the database
 router.post("/api/burgers", function(req, res) {
   burger.insertOne(req.body.burgerName, function(result) {
     res.json({id: result.insertId})
   });
+});
+
+// Update database
+router.put("/api/burgers/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  console.log("condition: ", condition);
+  burger.updateOne({
+    menu: req.body.menu,
+    served: req.body.served,
+    devoured: req.body.devoured
+  }, condition, function(result) {
+    if (result.changedRow == 0) {
+      return res.status(404).end();
+    }
+    else {
+      res.status(200).end()
+    }
+  })
 })
 
 // Export ===================================================================

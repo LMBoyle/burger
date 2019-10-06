@@ -26,7 +26,7 @@ function objToSql(ob) {
 }
 
 // Methods ==================================================================
-
+// ORM methods to select, add and update
 var orm = {
   selectAll: function(tableInput, cb) {
     // SELECT * FROM ____

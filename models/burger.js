@@ -14,6 +14,11 @@ var burger = {
     orm.insertOne("burgers", vals, function(res) {
       cb(res)
     })
+  },
+  updateOne: function(vals, condition, cb) {
+    orm.updateOne("burgers", vals, condition, function(res) {
+      cb(res)
+    })
   }
 }
 
