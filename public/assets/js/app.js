@@ -52,16 +52,26 @@ $(function () {
       console.log("changed state: ", newState);
       // Show gif 
       gifDiv.empty();
-      gifImg.attr("src", menuGifs[Math.floor(Math.random() * 2)])
+      gifImg.attr("src", menuGifs[Math.floor(Math.random() * 3)])
       gifDiv.append(gifImg)
       $(".menuGif").css("display", "block")
-      // location.reload();
+      // Wait 5 seconds then reload the page
+      setTimeout(reload, 5000)
     })
   })
 
   // On plate click
   $(".burgerPlate").on("click", function(event) {
     var id = $(this).data("id");
+    var plateGifs = [
+      "http://giphygifs.s3.amazonaws.com/media/AAfpHO80onDYk/giphy.gif",
+      "https://media.giphy.com/media/mEDJ5JPioxctLKo49q/giphy.gif",
+      "https://media.giphy.com/media/5YpIssZR9aNPFCKScs/giphy.gif",
+      "https://media.giphy.com/media/MmOAKMzYg4EDqadUCH/giphy.gif"
+    ]
+
+    var gifDiv = $(".plateGif")
+    var gifImg = $("<img>")
 
     var newState = {
       menu: false,
@@ -74,7 +84,17 @@ $(function () {
       data: newState
     }).then(function() {
       console.log("changed state: ", newState);
-      location.reload();
+      // Show gif 
+      gifDiv.empty();
+      gifImg.attr("src", plateGifs[Math.floor(Math.random() * 4)])
+      gifDiv.append(gifImg)
+      $(".plateGif").css("display", "block")
+      // Wait 5 seconds then reload the page
+      setTimeout(reload, 5000)
     })
   })
+
+  function reload() {
+    location.reload();
+  }
 })

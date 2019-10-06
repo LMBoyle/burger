@@ -104,7 +104,8 @@ li:hover {
   padding-left: 10px;
 }
 
-.menuGif {
+.menuGif,
+.plateGif {
   position: absolute;
   top: 5%;
   right: 23%;
@@ -115,7 +116,8 @@ li:hover {
   /* background: red */
 }
 
-.menuGif img {
+.menuGif img,
+.plateGif img {
   position: absolute;
   top: 50%;
   left: 50%;
