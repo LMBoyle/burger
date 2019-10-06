@@ -24,7 +24,7 @@ $(function () {
     )
   });
 
-  // TODO On menu click
+  // On menu click
   $(".burgerText").on("click", function(event) {
     var id = $(this).data("id");
 
@@ -43,5 +43,23 @@ $(function () {
     })
   })
 
-  // TODO On plate click
+  // On plate click
+  $(".burgerPlate").on("click", function(event) {
+    var id = $(this).data("id");
+
+    var newState = {
+      menu: false,
+      served: false,
+      devoured: true
+    };
+
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: newState
+    }).then(function() {
+      console.log("changed state: ", newState);
+      location.reload();
+
+    })
+  })
 })
