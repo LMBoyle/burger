@@ -60,7 +60,7 @@
         <div class="burgers">
           <ul>
             {{#each burgers}}
-              {{#if this.served}}
+              {{#if numServed}}
                 {{#repeat numServed}}
                   <li class="burgerPlate" data-id="{{id}}" data-served="{{numServed}}" data-devoured="{{numDevoured}}">
                     <button class="burgerBtn" data-toggle="tooltip" title="{{this.burgerName}}"></button>
@@ -81,7 +81,7 @@
         <div class="eatenBurgers">
           <ul>
             {{#each burgers}}
-              {{#if this.devoured}}
+              {{#if numDevoured}}
                 {{#repeat numDevoured}}
                   <li data-id="{{id}}" data-served="{{numServed}}" data-devoured="{{numDevoured}}">
                     <button class="eatenBurgerBtn" data-toggle="tooltip" title="{{this.burgerName}}"></button>

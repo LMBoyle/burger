@@ -82,9 +82,7 @@ $(function () {
     var gifImg = $("<img>")
 
     var newState = {
-      served: true,
       numServed: numServed + 1,
-      devoured: false,
       numDevoured : numDevoured
     };
 
@@ -107,6 +105,9 @@ $(function () {
   // On plate click
   $(".burgerPlate").on("click", function(event) {
     var id = $(this).data("id");
+    var numServed = $(this).data("served");
+    var numDevoured = $(this).data("devoured");
+
     var plateGifs = [
       "http://giphygifs.s3.amazonaws.com/media/AAfpHO80onDYk/giphy.gif",
       "https://media.giphy.com/media/mEDJ5JPioxctLKo49q/giphy.gif",
@@ -120,9 +121,8 @@ $(function () {
     var gifImg = $("<img>")
 
     var newState = {
-      menu: false,
-      served: false,
-      devoured: true
+      numServed: numServed - 1,
+      numDevoured : numDevoured + 1
     };
 
     $.ajax("/api/burgers/" + id, {
