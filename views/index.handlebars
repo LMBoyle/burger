@@ -28,7 +28,7 @@
 
           {{!-- List Burgers --}}
           <div class="menuText">
-            <ul>
+            <ul id="menuList">
               {{#each burgers}}
                 <li class="burgerText" data-id="{{id}}" data-served="{{numServed}}" data-devoured="{{numDevoured}}">
                   {{burgerName}}
@@ -58,7 +58,7 @@
         <img src="/assets/img/plate.png" alt="plate"/>
 
         <div class="burgers">
-          <ul>
+          <ul id="plateList">
             {{#each burgers}}
               {{#if numServed}}
                 {{#repeat numServed}}
@@ -79,7 +79,7 @@
         <img src="/assets/img/stomach.jpg" alt="stomach"/>
 
         <div class="eatenBurgers">
-          <ul>
+          <ul id="stomachList">
             {{#each burgers}}
               {{#if numDevoured}}
                 {{#repeat numDevoured}}
