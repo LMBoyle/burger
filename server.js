@@ -3,6 +3,9 @@
 var express = require("express");
 var routes = require("../burger/controllers/burgersController.js");
 var exphbs = require("express-handlebars");
+const handlebars = require('handlebars');
+const repeat = require('handlebars-helper-repeat');
+
 
 // Express ==================================================================
 
@@ -15,8 +18,21 @@ app.use(express.static("public"));
 
 // Handlebars ===============================================================
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+var hbs = exphbs.create({
+  defaultLayout: "main",
+  helperRepeat: handlebars.registerHelper('repeat', repeat),
+  customHelper: handlebars.registerHelper("test", function() {
+    var testArr = ["Test 1", "Test 2", "Working yay!"]
+    var testObj = {
+      test: "test1"
+    }
+    console.log(testObj)
+    return testObj
+  })
+})
+
 app.set("view engine", "handlebars");
+app.engine("handlebars", hbs.engine);
 
 // Routes ===================================================================
 

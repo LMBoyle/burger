@@ -30,11 +30,9 @@
           <div class="menuText">
             <ul>
               {{#each burgers}}
-                {{#if this.menu}}
-                  <li class="burgerText" data-id="{{id}}">
-                    {{this.burgerName}}
-                  </li>
-                {{/if}}
+                <li class="burgerText" data-id="{{id}}">
+                  {{burgerName}}
+                </li>
               {{/each}}
             </ul>
           </div>
@@ -63,9 +61,11 @@
           <ul>
             {{#each burgers}}
               {{#if this.served}}
-                <li class="burgerPlate" data-id="{{id}}">
-                  <button class="burgerBtn" data-toggle="tooltip" title="{{this.burgerName}}"></button>
-                </li>
+                {{#repeat numServed}}
+                  <li class="burgerPlate" data-id="{{id}}">
+                    <button class="burgerBtn" data-toggle="tooltip" title="{{this.burgerName}}"></button>
+                  </li>
+                {{/repeat}}
               {{/if}}
             {{/each}}
           </ul>
@@ -82,9 +82,11 @@
           <ul>
             {{#each burgers}}
               {{#if this.devoured}}
-                <li data-id="{{id}}">
-                  <button class="eatenBurgerBtn" data-toggle="tooltip" title="{{this.burgerName}}"></button>
-                </li>
+                {{#repeat numDevoured}}
+                  <li data-id="{{id}}">
+                    <button class="eatenBurgerBtn" data-toggle="tooltip" title="{{this.burgerName}}"></button>
+                  </li>
+                {{/repeat}}
               {{/if}}
             {{/each}}
           </ul>

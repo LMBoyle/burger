@@ -2,7 +2,7 @@ $(function () {
   // Function for showing/hiding tooltips
   $('[data-toggle="tooltip"]').tooltip();
 
-  // TODO Change carousel icons
+  // On slide, change carousel icons
   $('#carouselIndicators').on('slid.bs.carousel', function() {
     currentIndex = $('div.active').index() + 1;
     var previous = $("#leftIcon");
@@ -36,6 +36,7 @@ $(function () {
     }
     console.log(currentIndex)
   });
+
   // TODO Stay on page when reload
 
   // On submit, add a new burger
@@ -58,9 +59,9 @@ $(function () {
     )
   });
 
-  // On menu click
-  // TODO keep all items on menu and add to a different table for plate & stomach
   // TODO prevent too many burgers on plate or stomach
+
+  // On menu click
   $(".burgerText").on("click", function(event) {
     var id = $(this).data("id");
     var menuGifs = [
@@ -90,9 +91,10 @@ $(function () {
       gifDiv.empty();
       gifImg.attr("src", menuGifs[Math.floor(Math.random() * menuGifs.length)])
       gifDiv.append(gifImg)
-      $(".menuGif").css("display", "block")
+      $(".menuGif").css("display", "block");
+
       // Wait 5 seconds then reload the page
-      // setTimeout(reload, 5000)
+      setTimeout(reload, 5000)
     })
   })
 
@@ -126,12 +128,14 @@ $(function () {
       gifDiv.empty();
       gifImg.attr("src", plateGifs[Math.floor(Math.random() * plateGifs.length)])
       gifDiv.append(gifImg)
-      $(".plateGif").css("display", "block")
+      $(".plateGif").css("display", "block");
+
       // Wait 5 seconds then reload the page
       setTimeout(reload, 5000)
     })
   })
 
+  // Reload page
   function reload() {
     location.reload();
   }
