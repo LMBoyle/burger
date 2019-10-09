@@ -40,9 +40,10 @@ router.put("/api/burgers/:id", function(req, res) {
 
   console.log("condition: ", condition);
   burger.updateOne({
-    menu: req.body.menu,
     served: req.body.served,
-    devoured: req.body.devoured
+    numServed: req.body.numServed,
+    devoured: req.body.devoured,
+    numDevoured: req.body.numDevoured
   }, condition, function(result) {
     if (result.changedRow == 0) {
       return res.status(404).end();

@@ -64,6 +64,11 @@ $(function () {
   // On menu click
   $(".burgerText").on("click", function(event) {
     var id = $(this).data("id");
+    var numServed = $(this).data("served");
+    var numDevoured = $(this).data("devoured");
+
+    console.log("Num served: ", numServed)
+
     var menuGifs = [
       "https://media.giphy.com/media/l2SpNLZQSlENDKAkU/giphy.gif",
       "https://media.giphy.com/media/3o7TKUGccxlaQqdgRO/giphy.gif",
@@ -77,9 +82,10 @@ $(function () {
     var gifImg = $("<img>")
 
     var newState = {
-      menu: false,
       served: true,
-      devoured: false
+      numServed: numServed + 1,
+      devoured: false,
+      numDevoured : numDevoured
     };
 
     $.ajax("/api/burgers/" + id, {
