@@ -186,12 +186,12 @@ li:hover {
   color: whitesmoke;
   position: absolute;
   top: 108px;
-  left: 322px;
+  left: 610px;
   -webkit-columns: 4;
   -moz-columns: 4;
   columns: 4;
   height: 66%;
-  width: 40%;
+  width: 27%;
   padding: 0 0.5em;
   -webkit-column-fill: auto;
   -moz-column-fill: auto;
