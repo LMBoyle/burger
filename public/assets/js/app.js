@@ -37,14 +37,22 @@ $(function () {
     console.log(currentIndex)
   });
 
-  // TODO Stay on page when reload
-
   // On submit, add a new burger
   $(".newBurger").on("submit", function(event) {
     event.preventDefault();
     // Prevent too many burgers on menu
     if ($("#menuList li").length > 26) {
-      alert("Too many items")
+      var alertModalTitle = $("#modalTitle");
+      var alertModalText = $("#modalText");
+      var modalGif = $("<img>")
+
+      alertModalTitle.html("");
+      alertModalText.empty();
+
+      alertModalTitle.append("Can't Add Anymore Burgers. You Have Enough Options!")
+      modalGif.attr("src", "https://media.giphy.com/media/sRIXt1e9dQRjEjxnMk/giphy.gif")
+      alertModalText.append(modalGif)
+      $("#alertModal").modal("show")
     }
     else {
       var newBurger = {
@@ -68,7 +76,17 @@ $(function () {
   $(".burgerText").on("click", function(event) {
     // Prevent too many burgers on plate
     if ($("#plateList li").length > 40) {
-      alert("Plates Full!")
+      var alertModalTitle = $("#modalTitle");
+      var alertModalText = $("#modalText");
+      var modalGif = $("<img>")
+
+      alertModalTitle.html("");
+      alertModalText.empty();
+
+      alertModalTitle.append("Your Plate Is Full! Go Eat First!")
+      modalGif.attr("src", "http://giphygifs.s3.amazonaws.com/media/11qMegyUMqJvOM/giphy.gif")
+      alertModalText.append(modalGif)
+      $("#alertModal").modal("show")
     }
     else {
       var id = $(this).data("id");
@@ -115,7 +133,17 @@ $(function () {
   $(".burgerPlate").on("click", function(event) {
     // Prevent too many burgers in stomach
     if ($("#stomachList li").length > 24) {
-      alert("Full!")
+      var alertModalTitle = $("#modalTitle");
+      var alertModalText = $("#modalText");
+      var modalGif = $("<img>")
+
+      alertModalTitle.html("");
+      alertModalText.empty();
+
+      alertModalTitle.append("You're Full! Can't Eat Anymore")
+      modalGif.attr("src", "https://media.giphy.com/media/mcCuxy50RELsI/giphy.gif")
+      alertModalText.append(modalGif)
+      $("#alertModal").modal("show")
     }
     else {
       var id = $(this).data("id");
@@ -156,6 +184,7 @@ $(function () {
     }
   });
   
+  // TODO Stay on page when reload
   // Reload page
   function reload() {
     location.reload();
