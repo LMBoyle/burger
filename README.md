@@ -19,7 +19,7 @@ Choose a burger or request your own. Then, head over to your plate to eat the bu
 
 ## Demo
 
-![Demo Gif]()
+![Demo Gif]("public/assets/img/Eat Da Burger!.gif")
 
 ## Future Development/Improvements
 - [ ] Mobile Responsive
@@ -30,6 +30,6 @@ Choose a burger or request your own. Then, head over to your plate to eat the bu
 
 
 ## Links
-[Deployed Link]()
+[Deployed Link](https://eatdaburger-lmb.herokuapp.com/)
 
 [Portfolio](https://lmboyle.github.io/)
