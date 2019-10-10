@@ -19,7 +19,7 @@ Choose a burger or request your own. Then, head over to your plate to eat the bu
 
 ## Demo
 
-![Demo Gif]("public/assets/img/Eat Da Burger!.gif")
+![Demo Gif](public\assets\img\eatDaBurger.gif)
 
 ## Future Development/Improvements
 - [ ] Mobile Responsive
