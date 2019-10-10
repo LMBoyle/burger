@@ -23,6 +23,7 @@ Choose a burger or request your own. Then, head over to your plate to eat the bu
 
 ## Future Development/Improvements
 - [ ] Mobile Responsive
+- [ ] Stop page from returning to menu on each reload
 - [ ] Sticky footer that doesn't like to stick
 - [ ] Better burger placement in divs
 - [ ] Possible animation for burgers going into stomach

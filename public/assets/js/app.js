@@ -46,11 +46,13 @@ $(function () {
     }
 
     var textBox = $("#bur");
-    textBox.css("border", "revert")
+    textBox.css("border", "1px solid lightgray;")
 
     for (var t = 0; t < $("#menuList li").length; t++) {
       if ($("#menuList li")[t].innerText.toLowerCase() === newBurger.burgerName.toLowerCase()) {
         textBox.css("border", "1px solid red");
+        textBox.val("");
+        textBox.attr("placeholder", "Already Exists!")
         return;
       }
     }
@@ -77,8 +79,7 @@ $(function () {
           data: newBurger
         }).then(
           function() {
-            console.log("New burger added");
-            // location.reload();
+            location.reload();
           }
         )
       }
@@ -106,8 +107,6 @@ $(function () {
       var numServed = $(this).data("served");
       var numDevoured = $(this).data("devoured");
   
-      console.log("Menu List Count ", )
-  
       var menuGifs = [
         "https://media.giphy.com/media/l2SpNLZQSlENDKAkU/giphy.gif",
         "https://media.giphy.com/media/3o7TKUGccxlaQqdgRO/giphy.gif",
@@ -129,7 +128,6 @@ $(function () {
         type: "PUT",
         data: newState
       }).then(function() {
-        console.log("changed state: ", newState);
         // Show gif 
         gifDiv.empty();
         gifImg.attr("src", menuGifs[Math.floor(Math.random() * menuGifs.length)])
