@@ -1,7 +1,7 @@
 // Dependencies =============================================================
 
 var express = require("express");
-var routes = require("../burger/controllers/burgersController.js");
+var routes = require("./controllers/burgerController.js");
 var exphbs = require("express-handlebars");
 const handlebars = require('handlebars');
 const repeat = require('handlebars-helper-repeat');
