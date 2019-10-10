@@ -40,35 +40,48 @@ $(function () {
   // On submit, add a new burger
   $(".newBurger").on("submit", function(event) {
     event.preventDefault();
-    // Prevent too many burgers on menu
-    if ($("#menuList li").length > 26) {
-      var alertModalTitle = $("#modalTitle");
-      var alertModalText = $("#modalText");
-      var modalGif = $("<img>")
 
-      alertModalTitle.html("");
-      alertModalText.empty();
-
-      alertModalTitle.append("Can't Add Anymore Burgers. You Have Enough Options!")
-      modalGif.attr("src", "https://media.giphy.com/media/sRIXt1e9dQRjEjxnMk/giphy.gif")
-      alertModalText.append(modalGif)
-      $("#alertModal").modal("show")
+    var newBurger = {
+      burgerName: $("#bur").val().trim(),
     }
-    else {
-      var newBurger = {
-        burgerName: $("#bur").val().trim(),
+
+    var textBox = $("#bur");
+    textBox.css("border", "revert")
+
+    for (var t = 0; t < $("#menuList li").length; t++) {
+      if ($("#menuList li")[t].innerText.toLowerCase() === newBurger.burgerName.toLowerCase()) {
+        textBox.css("border", "1px solid red");
+        return;
       }
-      console.log(newBurger)
-  
-      $.ajax("/api/burgers", {
-        type: "POST",
-        data: newBurger
-      }).then(
-        function() {
-          console.log("New burger added");
-          location.reload();
-        }
-      )
+    }
+    submitBurger();
+
+    function submitBurger(){
+      // Prevent too many burgers on menu
+      if ($("#menuList li").length > 26) {
+        var alertModalTitle = $("#modalTitle");
+        var alertModalText = $("#modalText");
+        var modalGif = $("<img>")
+
+        alertModalTitle.html("");
+        alertModalText.empty();
+
+        alertModalTitle.append("Can't Add Anymore Burgers. You Have Enough Options!")
+        modalGif.attr("src", "https://media.giphy.com/media/sRIXt1e9dQRjEjxnMk/giphy.gif")
+        alertModalText.append(modalGif)
+        $("#alertModal").modal("show")
+      }
+      else {
+        $.ajax("/api/burgers", {
+          type: "POST",
+          data: newBurger
+        }).then(
+          function() {
+            console.log("New burger added");
+            // location.reload();
+          }
+        )
+      }
     }
   });
 
