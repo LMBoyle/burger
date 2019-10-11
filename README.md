@@ -9,8 +9,10 @@ Choose a burger or request your own. Then, head over to your plate to eat the bu
 * Bootstrap
 * JavaScript
 * jQuery
+* MySQL
 * Heroku
-- ORM
+  * JawsDB MySQL
+* ORM
 
 ### NPM Packages
 * Express
