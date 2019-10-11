@@ -3,6 +3,7 @@
 var express = require("express");
 var routes = require("./controllers/burgersController.js");
 var exphbs = require("express-handlebars");
+var path = require("path");
 const handlebars = require('handlebars');
 const repeat = require('handlebars-helper-repeat');
 
@@ -14,14 +15,6 @@ var PORT = process.env.PORT || 1745;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-
-if (PORT === process.env.PORT) {
-  app.use(express.static('client/build'));
-}
-
-app.get('*', (request, response) => {
-  response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
 
 // Handlebars ===============================================================
 

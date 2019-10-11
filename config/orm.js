@@ -1,6 +1,6 @@
 // Dependencies =============================================================
 
-var connection = require("../config/connection.js");
+var connection = require("./connection.js");
 
 // Helpers ==================================================================
 // Helper function to convert object key/value pairs to SQL syntax
