@@ -1,4 +1,4 @@
-# burger
+# Eat Da Burger
 Order a delicious burger and scarf it down!
 
 ## Instructions
@@ -19,9 +19,11 @@ Choose a burger or request your own. Then, head over to your plate to eat the bu
 * Handlebars
 * Handlebar Repeat Helper
 
-## Demo
+## What It Teaches
+How to use handlebars and make an ORM
 
-![Demo Gif](public/assets/img/eatDaBurger.gif)
+## Demo
+![Demo Gif](public/assets/img/eatDaBurgerDemo.gif)
 
 ## Future Development/Improvements
 - [ ] Mobile Responsive
