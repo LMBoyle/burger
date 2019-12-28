@@ -1,10 +1,12 @@
-# Eat Da Burger
-Order a delicious burger and scarf it down!
+# [Eat Da Burger](https://eatdaburger-lmb.herokuapp.com/)
+
+Full-Stack application for 'ordering' and 'eating' burgers
 
 ## Instructions
+
 Choose a burger or request your own. Then, head over to your plate to eat the burgers you've ordered. You can even get a peek inside and see which burgers you've already had.
 
-## Languages/Technologies 
+## Built With...
 * HTML
 * Bootstrap
 * JavaScript
@@ -19,10 +21,8 @@ Choose a burger or request your own. Then, head over to your plate to eat the bu
 * Handlebars
 * Handlebar Repeat Helper
 
-## What It Teaches
-How to use handlebars and make an ORM
-
 ## Demo
+
 ![Demo Gif](public/assets/img/eatDaBurgerDemo.gif)
 
 ## Future Development/Improvements
@@ -32,8 +32,4 @@ How to use handlebars and make an ORM
 - [ ] Better burger placement in divs
 - [ ] Possible animation for burgers going into stomach
 
-
-## Links
-[Deployed Link](https://eatdaburger-lmb.herokuapp.com/)
-
-[Portfolio](https://lmboyle.github.io/)
+&copy; 2019 [Luke Boyle](https://lmboyle.github.io/)
